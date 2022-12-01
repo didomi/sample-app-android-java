@@ -1,0 +1,57 @@
+# .github/workflows/scheduled-update.yml
+name: Trigger Didomi SDK Update
+
+on:
+  schedule:
+    # Runs "At 00:00 on Sunday" (see https://crontab.guru)
+    - cron: '0 0 * * SUN'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Check Didomi SDK version
+    runs-on: ubuntu-latest
+    outputs:
+      continue: ${{ steps.check.outputs.continue }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check Didomi SDK version
+        id: check
+        run: echo "continue=$(bash .github/scripts/check_didomi_sdk.sh)" >> $GITHUB_OUTPUT
+
+  build:
+    name: Update & Build Didomi SDK
+    needs: [check]
+    if: ${{ needs.check.outputs.continue == 'yes' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up our JDK environment
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Update Didomi SDK
+        run: bash .github/scripts/update_didomi_sdk.sh
+
+      - name: Assemble with new dependcy
+        run: ./gradlew assemble --no-daemon
+
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          author_email: "cmp-mobile@didomi.io"
+          author_name: "Auto-Bot"
+          branch: ${{ github.ref }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: "Update Didomi SDK dependency"
