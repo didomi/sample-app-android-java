@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/didomi_pink_1">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/didomi_button_preferences_purposes"
+            style="@style/DidomiSampleAppButton"
+            android:text="@string/button_show_purposes_preferences" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/didomi_button_preferences_vendors"
+            style="@style/DidomiSampleAppButton"
+            android:text="@string/button_show_vendors_preferences" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/didomi_button_web_view"
+            style="@style/DidomiSampleAppButton"
+            android:text="@string/button_show_web_view" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/didomi_button_ad"
+            style="@style/DidomiSampleAppButton"
+            android:text="@string/button_show_ad" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/didomi_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Didomi</string>
+    <string name="title_activity_main">Didomi</string>
+    <string name="title_activity_web_view">Web View</string>
+    <string name="button_show_purposes_preferences">Show Preferences</string>
+    <string name="button_show_vendors_preferences">Show Preferences (Vendors)</string>
+    <string name="button_show_web_view">Show Web View</string>
+    <string name="button_show_ad">Show Ad</string>
+</resources>
