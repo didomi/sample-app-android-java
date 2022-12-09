@@ -1,8 +1,8 @@
-#  Didomi - Android App Sample (Java)
+#  Didomi - Android Sample App (Java)
 
 ## Description
 
-**This app sample demonstrates how to implement Didomi in a simple Android Studio project using Java.**
+**This sample app demonstrates how to implement Didomi in a simple Android Studio project using Java.**
 
 In particular, it shows how to:
 * Condition a custom vendor to consent
