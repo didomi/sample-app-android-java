@@ -3,15 +3,15 @@
     <!-- Base application theme. -->
     <style name="Theme.SampleAppJava" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/didomi_blue_6</item>
-        <item name="colorPrimaryVariant">@color/didomi_blue_6</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/didomi_electric_blue_50</item>
+        <item name="colorPrimaryVariant">@color/didomi_electric_blue_50</item>
+        <item name="colorOnPrimary">@color/didomi_white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/didomi_blue_6</item>
-        <item name="colorSecondaryVariant">@color/didomi_blue_6</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondary">@color/didomi_electric_blue_50</item>
+        <item name="colorSecondaryVariant">@color/didomi_electric_blue_50</item>
+        <item name="colorOnSecondary">@color/didomi_white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/didomi_electric_blue_10</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>
