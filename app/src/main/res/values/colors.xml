@@ -8,7 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="didomi_blue_5">#255873</color>
-    <color name="didomi_blue_6">#1D4153</color>
-    <color name="didomi_pink_1">#FFF6F2</color>
+    <color name="didomi_electric_blue_10">#2450B2</color>
+    <color name="didomi_electric_blue_50">#2E62D6</color>
+    <color name="didomi_grey_50">#F9FAFA</color>
+    <color name="didomi_grey_400">#0D2632</color>
+    <color name="didomi_white">#FFFFFF</color>
 </resources>
