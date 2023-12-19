@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace "com.didomi.sampleappjava"
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.didomi.sampleappjava"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
@@ -28,12 +28,12 @@ android {
 }
 
 dependencies {
-    implementation "io.didomi.sdk:android:1.86.3"
+    implementation "io.didomi.sdk:android:1.87.0"
 
     implementation "androidx.appcompat:appcompat:1.6.1"
     //noinspection GradleDependency - Higher version will require kotlin
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.5.1"
 
-    implementation "com.google.android.gms:play-services-ads:21.5.0"
-    implementation "com.google.android.material:material:1.8.0"
+    implementation "com.google.android.gms:play-services-ads:22.6.0"
+    implementation "com.google.android.material:material:1.11.0"
 }
