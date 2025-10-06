@@ -11,6 +11,7 @@ import io.didomi.sdk.DidomiInitializeParameters;
 import io.didomi.sdk.events.ConsentChangedEvent;
 import io.didomi.sdk.events.EventListener;
 import io.didomi.sdk.exceptions.DidomiNotReadyException;
+import io.didomi.sdk.models.CurrentUserStatus;
 import io.didomi.sdk.models.UserStatus;
 
 public final class MainApplication extends Application {
@@ -59,16 +60,24 @@ public final class MainApplication extends Application {
     }
 
     private void loadVendor() {
-        String vendorId = "c:customven-gPVkJxXD";
         Didomi didomi = Didomi.getInstance();
-        UserStatus status;
+
+        CurrentUserStatus status;
         try {
-            status = didomi.getUserStatus();
+            status = didomi.getCurrentUserStatus();
         } catch (DidomiNotReadyException e) {
-            e.printStackTrace();
+            Log.e("DIDOMI SAMPLE", e.getMessage(), e);
             return;
         }
-        boolean isVendorEnabled = status.getVendors().getGlobal().getEnabled().contains(vendorId);
+
+        String vendorId = "c:customven-gPVkJxXD";
+        CurrentUserStatus.VendorStatus vendor = status.getVendors().get(vendorId);
+        boolean isVendorEnabled;
+        if (vendor == null) {
+            isVendorEnabled = false;
+        } else {
+            isVendorEnabled = vendor.getEnabled();
+        }
 
         // Remove any existing event listener
         if (didomiEventListener != null) {
