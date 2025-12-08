@@ -70,7 +70,7 @@ public final class MainApplication extends Application {
             return;
         }
 
-        String vendorId = "c:customven-gPVkJxXD";
+        String vendorId = "customven-gPVkJxXD";
         CurrentUserStatus.VendorStatus vendor = status.getVendors().get(vendorId);
         boolean isVendorEnabled;
         if (vendor == null) {
